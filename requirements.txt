@@ -1,0 +1,6 @@
+Flask>=3.0
+python-dotenv
+mediapipe>=0.10.14
+opencv-python-headless>=4.9
+numpy
+gunicorn

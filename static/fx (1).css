@@ -1,0 +1,123 @@
+/* ---------- Light blue aurora + gym backdrop (login screen only) ---------- */
+#aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;display:block;
+  background:linear-gradient(135deg,#f8fbff 0%,#f5f3ff 55%,#fff7f2 100%)}
+.orb{display:none}
+body.is-auth #mute{display:none}
+.ab{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;will-change:transform}
+.a1{width:54vmax;height:54vmax;left:-16vmax;top:-20vmax;background:#38bdf8;animation:ab1 26s ease-in-out infinite alternate}
+.a2{width:48vmax;height:48vmax;right:-14vmax;top:-12vmax;background:#a78bfa;animation:ab2 32s ease-in-out infinite alternate}
+.a3{width:50vmax;height:50vmax;left:-12vmax;bottom:-22vmax;background:#f472b6;animation:ab3 29s ease-in-out infinite alternate}
+.a4{width:44vmax;height:44vmax;right:-10vmax;bottom:-18vmax;background:#fb923c;animation:ab4 35s ease-in-out infinite alternate}
+@keyframes ab1{0%{transform:translate(0,0) scale(1)}50%{transform:translate(18vmax,10vmax) scale(1.15)}100%{transform:translate(6vmax,24vmax) scale(.95)}}
+@keyframes ab2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-16vmax,14vmax) scale(.9)}100%{transform:translate(-4vmax,26vmax) scale(1.12)}}
+@keyframes ab3{0%{transform:translate(0,0) scale(1)}50%{transform:translate(20vmax,-12vmax) scale(1.1)}100%{transform:translate(8vmax,-24vmax) scale(.92)}}
+@keyframes ab4{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-18vmax,-8vmax) scale(1.12)}100%{transform:translate(-6vmax,-22vmax) scale(.95)}}
+/* login: everything soft blue */
+body.is-auth #aurora{background:linear-gradient(180deg,#f3f8ff,#e1efff 60%,#e4f4fd)}
+body.is-auth .ab{opacity:.65}
+body.is-auth .a1{background:#93c5fd}body.is-auth .a2{background:#7dd3fc}
+body.is-auth .a3{background:#bfdbfe}body.is-auth .a4{background:#a5f3fc}
+.gymbg{display:none}
+body.is-auth .gymbg{display:block;position:absolute;inset:0;width:100%;height:100%}
+body.is-auth .authwrap{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+
+/* ---------- Glass login card ---------- */
+.authcard{width:min(430px,100%);background:#ffffffeb;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border:1px solid #fff;border-radius:24px;padding:30px 28px 26px;
+  box-shadow:0 2px 6px #0f172a0d,0 28px 70px #2563eb30}
+.authcard .sp{display:none}
+.fxbrand{width:62px;height:62px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#60a5fa,#2563eb);box-shadow:0 10px 26px #2563eb40}
+.fxbrand svg{width:36px;height:36px;fill:#fff}
+.authcard h1{font-size:30px;font-weight:700;letter-spacing:-.025em;background:none;color:#0f2a5c;-webkit-text-fill-color:#0f2a5c}
+body.is-auth .authcard .sub{min-height:22px;margin:6px 0 14px;color:#475f86;font-size:14.5px;font-weight:500}
+.fxcaret{display:inline-block;width:2px;height:1.05em;margin-left:2px;background:#2563eb;vertical-align:-2px;animation:fxblink 1s steps(1) infinite}
+@keyframes fxblink{50%{opacity:0}}
+.fxpills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.authcard .fxpills span{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:99px;
+  background:#e8f1ffcc;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid #fff;
+  color:#1d4ed8;font-size:12.5px;font-weight:600;box-shadow:0 2px 8px #2563eb14}
+.fxpills svg{width:14px;height:14px;fill:none;stroke:#2563eb;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.authcard .tabs2{background:#e8f1ff;padding:4px;border-radius:14px;gap:4px}
+.authcard .tabs2 button{background:transparent;color:#5b6f94;padding:10px;border-radius:11px}
+.authcard .tabs2 button.on{background:#fff;color:#1d4ed8;box-shadow:0 2px 10px #2563eb26}
+.authcard label.f{margin:12px 0 5px}
+.authcard input,.authcard select{padding:12px 13px;border-color:#cfdcf1;background:#fff}
+.authcard input:focus,.authcard select:focus{border-color:#2563eb;box-shadow:0 0 0 4px #2563eb26;outline:0}
+.fxpw{position:relative;display:block}
+.fxpw input{padding-right:46px}
+.fxeye{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;background:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:none}
+.fxeye:hover{background:#e8f1ff}
+.fxeye svg{width:18px;height:18px;fill:none;stroke:#5b6f94;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.authcard .btn{width:100%;margin-top:16px;padding:13px 18px;font-size:15px;border-radius:12px;
+  background:linear-gradient(135deg,#3b82f6,#2563eb);box-shadow:0 8px 20px #2563eb40}
+.authcard .btn:hover{box-shadow:0 12px 28px #2563eb59}
+.authcard .btn.alt{background:#fff;color:#1d4ed8;border:1px solid #cfdcf1;box-shadow:none}
+
+/* ---------- Gym hero (left of the card) ---------- */
+body.is-auth .authwrap{gap:clamp(32px,6vw,90px);flex-wrap:nowrap}
+.fxhero{display:none;max-width:480px;color:#0f2a5c}
+.fxeyebrow{display:inline-block;padding:7px 14px;border-radius:99px;background:#ffffff99;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border:1px solid #fff;color:#1d4ed8;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 4px 14px #2563eb1a}
+.fxhero h2{margin:18px 0 14px;font-family:"Barlow Condensed","Oswald","Arial Narrow",Impact,sans-serif;font-weight:800;text-transform:uppercase;
+  font-size:clamp(52px,7vw,96px);line-height:.92;letter-spacing:.01em;color:#0f2a5c}
+.fxhero h2 em{font-style:normal;color:#2563eb;position:relative;display:inline-block}
+.fxhero h2 em::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:8px;border-radius:4px;background:linear-gradient(90deg,#60a5fa,#bfdbfe)}
+.fxhero p{margin:22px 0 22px;font-size:16.5px;line-height:1.55;color:#3b5683;max-width:380px}
+.fxfeat{display:flex;flex-wrap:wrap;gap:10px}
+.fxfeat span{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:14px;background:#ffffffa6;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border:1px solid #fff;color:#1e3a6e;font-size:13px;font-weight:600;box-shadow:0 6px 18px #2563eb1f}
+.fxfeat svg{width:17px;height:17px;fill:none;stroke:#2563eb;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.authcard{position:relative;overflow:hidden;flex:0 0 auto}
+.authcard::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#60a5fa,#2563eb 60%,#38bdf8)}
+@media(min-width:901px){.fxhero{display:block}.fxpills{display:none}}
+@media(max-width:900px){body.is-auth .authwrap{flex-direction:column}}
+
+/* ---------- Colourful theme (login) ---------- */
+body.is-auth #aurora{background:linear-gradient(135deg,#e6f2ff 0%,#f3ebff 50%,#fff0ea 100%)}
+body.is-auth .ab{opacity:.62}
+body.is-auth .a1{background:#60a5fa}body.is-auth .a2{background:#c084fc}
+body.is-auth .a3{background:#f9a8d4}body.is-auth .a4{background:#fdba74}
+.a5{width:36vmax;height:36vmax;left:34vmax;top:-8vmax;background:#5eead4;animation:ab2 38s ease-in-out infinite alternate}
+.authcard::before{height:6px;background:linear-gradient(90deg,#38bdf8,#6366f1 25%,#ec4899 50%,#f97316 75%,#facc15)}
+.fxbrand{background:linear-gradient(135deg,#38bdf8,#6366f1 55%,#ec4899);box-shadow:0 10px 26px #6366f155}
+.authcard h1{background:linear-gradient(90deg,#2563eb,#7c3aed 50%,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.authcard .btn{background:linear-gradient(135deg,#38bdf8,#6366f1 55%,#ec4899);box-shadow:0 10px 24px #6366f14d;transition:transform .2s,box-shadow .2s,filter .2s}
+.authcard .btn:hover{transform:translateY(-2px);filter:saturate(1.15);box-shadow:0 14px 30px #ec489955}
+.authcard .tabs2{background:linear-gradient(90deg,#e0f2fe,#ede9fe,#fce7f3)}
+.authcard .tabs2 button.on{color:#6d28d9}
+.authcard input:focus{border-color:#8b5cf6;box-shadow:0 0 0 4px #8b5cf626}
+.fxcaret{background:#ec4899}
+.fxeyebrow{background:linear-gradient(90deg,#ffffffcc,#fdf2f8cc);color:#be185d;border-color:#fbcfe8}
+.fxhero h2{color:#1e1b4b}
+.fxhero h2 em{background:linear-gradient(90deg,#f97316,#ec4899 55%,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.fxhero h2 em::after{background:linear-gradient(90deg,#facc15,#f97316,#ec4899,#8b5cf6,#38bdf8)}
+.fxhero p{color:#475085}
+.fxfeat span{--c:#2563eb;background:#ffffffb8;border-color:#fff;color:#1e1b4b}
+.fxfeat span:nth-child(1){--c:#2563eb;--b:#dbeafe}.fxfeat span:nth-child(2){--c:#ea580c;--b:#ffedd5}
+.fxfeat span:nth-child(3){--c:#7c3aed;--b:#ede9fe}.fxfeat span:nth-child(4){--c:#059669;--b:#d1fae5}
+.fxfeat svg{stroke:var(--c);box-sizing:content-box;padding:7px;border-radius:10px;background:var(--b);width:17px;height:17px;margin:-4px 0 -4px -6px}
+.fxfeat span{box-shadow:0 8px 20px color-mix(in srgb,var(--c) 22%,transparent)}
+.authcard .fxpills span{color:#6d28d9;background:#f5f3ffcc}
+
+
+.login{position:fixed;inset:0;z-index:70;overflow:auto;background:#eaf3ff}.login[hidden]{display:none}
+.tabs2{display:flex;gap:4px;margin:0 0 4px}.tabs2 button{flex:1;border:0;font:600 13px Inter,sans-serif;cursor:pointer}
+.err{color:#b91c1c;font-size:13px;min-height:18px;margin-top:6px}
+.authcard h1,.authcard .sub{text-align:center}.authcard .sub{margin-top:6px}
+.demo{margin-top:16px;padding-top:14px;border-top:1px dashed #cfdcf1;text-align:center;font-size:12px;color:#5b6f94}
+.demo .dr{display:flex;gap:6px;justify-content:center;margin-top:8px}
+.demo .dc{padding:6px 13px;border-radius:99px;background:#fff;border:1px solid #cfdcf1;color:#334155;font:600 12px Inter,sans-serif}
+.demo .dc.on{background:linear-gradient(135deg,#38bdf8,#6366f1);color:#fff;border-color:transparent}
+.vsw{display:inline-flex;gap:3px;padding:3px;border-radius:99px;background:#fff;border:1px solid #e0e7ff}
+.vsw button{padding:5px 13px;border-radius:99px;background:none;font:600 12px Inter,sans-serif;color:#475569}
+.vsw button.on{background:linear-gradient(135deg,#38bdf8,#6366f1 60%,#ec4899);color:#fff}
+.emo svg{display:block;margin:auto}
+/* dashboard shares the login palette */
+.aurora{background:#f6f9ff}.aurora i:nth-child(1){background:#bfdbfe}.aurora i:nth-child(2){background:#a5f3fc}.aurora i:nth-child(3){background:#ddd6fe}.aurora i:nth-child(4){background:#fbcfe8}
+.logo{background:linear-gradient(90deg,#2563eb,#7c3aed 55%,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tab.on{background:linear-gradient(135deg,#dbeafe,#e0e7ff 50%,#fce7f3);color:#312e81}
+.btn{background:linear-gradient(135deg,#38bdf8,#6366f1 55%,#ec4899);box-shadow:0 8px 20px rgba(99,102,241,.28)}.btn.alt{background:#fff;color:#4338ca;border:1px solid #e0e7ff;box-shadow:none}
+.card::before{background:linear-gradient(90deg,#38bdf8,#6366f1 28%,#ec4899 55%,#f97316 78%,#facc15)}
+.hero{background:linear-gradient(120deg,#bae6fd,#c7d2fe 42%,#fbcfe8 75%,#fed7aa)}
