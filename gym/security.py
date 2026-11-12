@@ -4,7 +4,7 @@ from flask import session, request, g
 from .db import fetch1
 from .util import ApiError
 
-EXEMPT = {"/api/auth/login", "/api/auth/register"}
+EXEMPT = {"/api/auth/login", "/api/auth/register", "/api/auth/forgot", "/api/auth/reset"}
 
 
 def current_user():

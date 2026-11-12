@@ -27,10 +27,10 @@ def create_app(config=None):
         logging.warning("SECRET_KEY is the insecure development default. Set a long random SECRET_KEY in .env before deploying.")
     os.makedirs(app.instance_path, exist_ok=True)
     os.makedirs(app.config["UPLOAD_DIR"], exist_ok=True)
-    from . import db, security, auth, membership, dashboard, tracking, diet, videos, posture, coach, wellness, admin, gym, trainers
+    from . import db, security, auth, membership, dashboard, tracking, diet, videos, posture, coach, wellness, admin, gym, trainers, logbook
     db.init_app(app)
     security.init_app(app)
-    for m in (auth, membership, dashboard, tracking, diet, videos, posture, coach, wellness, admin, gym, trainers):
+    for m in (auth, membership, dashboard, tracking, diet, videos, posture, coach, wellness, admin, gym, trainers, logbook):
         app.register_blueprint(m.bp)
 
     @app.errorhandler(ApiError)
